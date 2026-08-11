@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# QGIS
+*.qmd
+
+# Temporary Office Files
+~$*
+
+# Large TIFF files
+*.tif
+
+# Auxiliary raster files
+*.aux.xml
+
+# Trained Models
+*.pkl
+
+# ZIP files
+*.zip
+
+# OS files
+Thumbs.db
+Desktop.ini
+
+# Large shapefile attribute tables
+*.dbf
