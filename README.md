@@ -1,216 +1,476 @@
-# District-Level Carbon Stock Estimation
+# 🌱 District-Level Carbon Stock Estimation
 
 ### Grid-Based Machine Learning Framework for Agricultural Landscapes in Ludhiana District, Punjab, India
 
 ---
 
-## Repository Highlights
+## 🚀 Live Dashboard
 
-✔ District-wide Carbon Stock Estimation
+### Carbon Stock Intelligence — Ludhiana
 
-✔ 66,790 Spatial Grid Cells Analyzed
+**Live application:**
+https://district-level-carbon-stock-estimation.streamlit.app/
 
-✔ Integration of Remote Sensing, Soil, and Productivity Data
+The interactive Streamlit dashboard provides:
 
-✔ Random Forest and XGBoost Machine Learning Models
-
-✔ Interactive Carbon Intelligence Web Application
-
-✔ PostgreSQL/PostGIS and MongoDB-Based Data Architecture
-
----
-
-## Project Overview
-
-This project estimates the total carbon stock of Ludhiana District, Punjab, India, using a grid-based spatial framework and machine learning techniques.
-
-The study integrates remote sensing products, soil properties, and vegetation productivity datasets to estimate both above-ground carbon (AGC) and below-ground carbon (BGC) across agricultural landscapes.
-
-Machine learning models were trained using sampled grid cells and subsequently applied to predict carbon stock across all 66,790 grid cells covering the district.
-
-The final outputs are visualized through an interactive web application designed for carbon monitoring, reporting, and decision support.
+* District-level carbon stock visualization
+* Above-ground carbon (AGC)
+* Below-ground carbon (BGC)
+* Total carbon stock
+* CO₂-equivalent estimates
+* Monthly NDVI temporal analysis
+* Grid-level carbon analysis
+* Grid-level NDVI profiles
+* Integrated Carbon–NDVI dataset
+* Interactive spatial carbon map
+* Carbon dataset statistics and coverage information
 
 ---
 
-## Project Objectives
+## 📌 Project Highlights
 
-1. Generate a district-wide 250 m × 250 m grid framework.
-2. Identify agricultural areas using LULC-based masking.
+* ✔ District-wide agricultural carbon stock estimation
+* ✔ 250 m × 250 m spatial grid framework
+* ✔ Integration of remote sensing, soil and productivity datasets
+* ✔ Random Forest and XGBoost machine learning models
+* ✔ Above-ground and below-ground carbon estimation
+* ✔ Grid-level spatial prediction
+* ✔ Monthly NDVI analysis for June 2024–May 2025
+* ✔ Interactive Streamlit dashboard
+* ✔ GitHub-based project architecture
+* ✔ Publicly deployed web application
+
+---
+
+## 📖 Project Overview
+
+This project estimates carbon stock across agricultural landscapes of **Ludhiana District, Punjab, India**, using a grid-based geospatial framework and machine learning.
+
+The workflow integrates:
+
+* Remote sensing data
+* Soil properties
+* Digital elevation and terrain variables
+* Vegetation indices
+* Net Primary Productivity (NPP)
+* Land-use/land-cover information
+* Machine learning models
+
+The resulting spatial predictions are used to estimate above-ground carbon, below-ground carbon, total carbon stock and CO₂-equivalent storage.
+
+The final outputs are presented through an interactive **Carbon Stock Intelligence** dashboard developed using Streamlit.
+
+---
+
+## 🎯 Objectives
+
+1. Generate a uniform spatial grid across Ludhiana district.
+2. Identify agricultural areas using LULC information.
 3. Extract environmental and geospatial variables for each grid cell.
-4. Estimate above-ground carbon using productivity indicators.
+4. Estimate above-ground carbon using productivity information.
 5. Estimate below-ground carbon using soil properties.
-6. Train machine learning models using representative sample grids.
-7. Predict carbon stock for all district grid cells.
-8. Generate district-wide carbon stock maps and summaries.
-9. Deploy an interactive carbon intelligence platform.
+6. Develop machine learning models for carbon prediction.
+7. Apply trained models to the district-wide spatial grid.
+8. Generate spatial carbon stock outputs.
+9. Integrate carbon predictions with remote sensing information.
+10. Develop an interactive web-based carbon intelligence platform.
 
 ---
 
-## Study Area
+## 📍 Study Area
 
-| Parameter                     | Value                            |
-| ----------------------------- | -------------------------------- |
-| Study Area                    | Ludhiana District, Punjab, India |
-| Grid Resolution               | 250 m × 250 m                    |
-| Area per Grid                 | 6.25 ha                          |
-| Total Grid Cells              | 66,790                           |
-| Agricultural Grid Cells       | ~50,402                          |
-| Above-Ground Training Samples | 12,602                           |
-| Below-Ground Training Samples | 20,000                           |
+| Parameter                       | Value                            |
+| ------------------------------- | -------------------------------- |
+| Study Area                      | Ludhiana District, Punjab, India |
+| Grid Resolution                 | 250 m × 250 m                    |
+| Area per Grid                   | 6.25 ha                          |
+| Initial Spatial Grid Framework  | 66,790 cells                     |
+| Final Carbon Prediction Dataset | 64,545 grids                     |
+| NDVI Dataset Records            | 20,000                           |
+| Unique NDVI Grids               | 19,801                           |
+| NDVI Period                     | June 2024 – May 2025             |
 
----
-
-## System Workflow
-
-```text
-Remote Sensing Data
-        +
-Soil Data
-        +
-NPP Data
-        ↓
-Feature Extraction
-        ↓
-Training Dataset Creation
-        ↓
-Random Forest & XGBoost Models
-        ↓
-District-Wide Prediction
-        ↓
-Carbon Stock Mapping
-        ↓
-Interactive Web Application
-```
+The initial spatial framework contains 66,790 grid cells. The final carbon prediction dataset used by the dashboard contains 64,545 spatial prediction grids.
 
 ---
 
-## Methodology
+## 🛰️ Data Integration
 
-### Step 1: Study Area Preparation
+The project combines multiple geospatial and environmental datasets.
 
-The administrative boundary of Ludhiana District was prepared and used as the Area of Interest (AOI).
+### Remote Sensing Variables
 
-### Step 2: Grid Generation
-
-A uniform 250 m × 250 m grid framework was generated across the district.
-
-### Step 3: Agricultural Masking
-
-Land Use Land Cover (LULC) data was used to identify agricultural areas.
-
-Only agricultural grid cells were retained for carbon estimation.
-
-### Step 4: Feature Extraction
-
-Environmental variables were extracted using zonal statistics.
-
-#### Remote Sensing Variables
-
-* NDVI (Normalized Difference Vegetation Index)
-* NDWI (Normalized Difference Water Index)
+* NDVI — Normalized Difference Vegetation Index
+* NDWI — Normalized Difference Water Index
 * Land Surface Temperature (LST)
-* Precipitation
+* Satellite-derived vegetation information
+
+### Terrain Variables
+
 * DEM
 * Slope
 
-#### Soil Variables
+### Soil Variables
 
 * Soil Organic Carbon (SOC)
 * Bulk Density
 * Clay Content
 * Sand Content
 
-#### Productivity Variable
+### Productivity Variable
 
 * Net Primary Productivity (NPP)
 
-### Step 5: Carbon Stock Calculation
+### Land Use / Land Cover
 
-#### Above-Ground Carbon
+LULC information is used to identify agricultural areas and support spatial masking.
 
-AGC = NPP × 0.47
+---
 
-where:
+## 🔬 System Workflow
 
-* NPP = Net Primary Productivity
-* 0.47 = Carbon fraction of biomass
+```text
+                 Study Area
+                     │
+                     ▼
+            Spatial Grid Creation
+                     │
+                     ▼
+              LULC / Ag Mask
+                     │
+                     ▼
+       ┌─────────────┼─────────────┐
+       │             │             │
+       ▼             ▼             ▼
+ Remote Sensing    Soil Data     NPP Data
+       │             │             │
+       └─────────────┼─────────────┘
+                     ▼
+              Feature Extraction
+                     │
+                     ▼
+             Training Dataset
+                     │
+                     ▼
+        Random Forest + XGBoost
+                     │
+                     ▼
+           Carbon Prediction
+                     │
+                     ▼
+       AGC + BGC + Total Carbon
+                     │
+                     ▼
+          Spatial Carbon Mapping
+                     │
+                     ▼
+        Carbon–NDVI Integration
+                     │
+                     ▼
+          Streamlit Dashboard
+```
 
-#### Soil Organic Carbon Stock
+---
 
-SOC Stock = SOC × Bulk Density × Depth ÷ 10
+# 🧮 Methodology
 
-where:
+## 1. Study Area Preparation
 
-* Depth = 30 cm
+The administrative boundary of Ludhiana District was prepared and used as the Area of Interest (AOI).
 
-### Step 6: Machine Learning Model Development
+## 2. Spatial Grid Generation
 
-Separate models were developed for:
+A uniform **250 m × 250 m** grid framework was generated across the study area.
 
-* Above-Ground Carbon
-* Below-Ground Carbon
+Each grid represents approximately:
 
-Algorithms used:
+**6.25 hectares**
+
+## 3. Agricultural Masking
+
+Land Use/Land Cover information was used to identify agricultural grid cells.
+
+The agricultural mask was used to focus the carbon estimation workflow on relevant agricultural landscapes.
+
+## 4. Feature Extraction
+
+Environmental and geospatial variables were extracted for the spatial grid using raster and spatial analysis techniques.
+
+### Major predictor variables
+
+* DEM
+* Slope
+* Sand percentage
+* Clay percentage
+* Bulk density
+* Soil Organic Carbon
+* NPP
+* NDVI
+* Other remote sensing variables
+
+## 5. Carbon Estimation
+
+### Above-Ground Carbon
+
+Above-ground carbon is estimated from productivity-based information.
+
+The implemented workflow uses NPP-derived carbon estimation.
+
+### Below-Ground Carbon
+
+Below-ground carbon is estimated using soil-related variables, including Soil Organic Carbon, bulk density and soil depth.
+
+A representative SOC stock relationship is:
+
+```text
+SOC Stock = SOC × Bulk Density × Soil Depth / 10
+```
+
+where soil depth is expressed in centimetres.
+
+## 6. Machine Learning
+
+Machine learning models were developed to estimate carbon-related variables from environmental and spatial predictors.
+
+### Algorithms
 
 * Random Forest
 * XGBoost
 
-### Step 7: District-Wide Prediction
+Separate modeling workflows were used for above-ground and below-ground carbon estimation.
 
-Trained models were applied to all 66,790 grid cells.
+## 7. District-Wide Prediction
 
-Predictions were combined to generate district-level carbon stock estimates.
+The trained models were applied to the final spatial prediction grid.
 
-### Step 8: Web Platform Deployment
+The resulting dataset contains **64,545 final carbon prediction grids** used by the dashboard.
 
-Prediction outputs were integrated into a web application powered by:
+## 8. Carbon Stock Outputs
 
-* Flask
-* PostgreSQL/PostGIS
-* MongoDB Atlas
+The final dataset contains variables including:
 
----
+* `Predicted_SOC`
+* `BGC_tC_ha`
+* `Predicted_NPP`
+* `AGC_tC_ha`
+* `Total_C_tC_ha`
+* `Total_CO2e_tC_ha`
 
-## Data Sources
+## 9. NDVI Temporal Analysis
 
-| Dataset                  | Source                     |
-| ------------------------ | -------------------------- |
-| NDVI                     | Sentinel-2                 |
-| NDWI                     | Sentinel-2                 |
-| Land Surface Temperature | Satellite-derived products |
-| DEM                      | SRTM / Copernicus DEM      |
-| Slope                    | Derived from DEM           |
-| Precipitation            | Climate Raster Products    |
-| NPP                      | MODIS NPP                  |
-| Soil Organic Carbon      | ISRIC SoilGrids            |
-| Bulk Density             | ISRIC SoilGrids            |
-| Clay Content             | ISRIC SoilGrids            |
-| Sand Content             | ISRIC SoilGrids            |
+Monthly NDVI data are available for:
 
----
+```text
+Jun 2024
+Jul 2024
+Aug 2024
+Sep 2024
+Oct 2024
+Nov 2024
+Dec 2024
+Jan 2025
+Feb 2025
+Mar 2025
+Apr 2025
+May 2025
+```
 
-## Machine Learning Models
+The NDVI dataset contains 20,000 records corresponding to 19,801 unique grid IDs.
 
-### Random Forest
-
-An ensemble learning algorithm capable of modeling complex nonlinear relationships between environmental variables and carbon stock.
-
-### XGBoost
-
-A gradient boosting framework that improves predictive performance through iterative learning.
-
-Four models were developed:
-
-* Above-Ground Carbon Random Forest
-* Above-Ground Carbon XGBoost
-* Below-Ground Carbon Random Forest
-* Below-Ground Carbon XGBoost
+Where duplicate NDVI records occur for the same grid, monthly NDVI values are averaged to create a single grid-level NDVI profile.
 
 ---
 
-## Model Evaluation
+# 🌿 Carbon–NDVI Integration
 
-The following metrics were used:
+The carbon prediction dataset is treated as the **master spatial dataset**.
+
+A left join is used to associate NDVI information with carbon grids.
+
+Therefore:
+
+```text
+Carbon prediction grids       = 64,545
+Unique NDVI grids              = 19,801
+Carbon grids without NDVI     = 44,744
+```
+
+The 44,744 grids without NDVI do **not** indicate a dashboard error. They represent carbon prediction grids for which a corresponding NDVI Grid_ID is not available in the current NDVI dataset.
+
+This allows the dashboard to retain all carbon prediction grids while displaying NDVI only where corresponding observations are available.
+
+---
+
+# 💻 Interactive Dashboard
+
+The final application is developed using **Streamlit**.
+
+### Dashboard components
+
+#### 1. Carbon Stock Overview
+
+Displays:
+
+* Mean Above-Ground Carbon
+* Mean Below-Ground Carbon
+* Mean Total Carbon
+* Mean CO₂ Equivalent
+
+#### 2. Carbon Component Comparison
+
+Interactive comparison of:
+
+* AGC
+* BGC
+* Total Carbon
+
+#### 3. NDVI Temporal Analysis
+
+Displays the district-level monthly NDVI profile from June 2024 to May 2025.
+
+#### 4. Grid-Level Analysis
+
+Users can select a Grid ID and inspect:
+
+* Above-ground carbon
+* Below-ground carbon
+* Total carbon
+* CO₂ equivalent
+* Monthly NDVI profile, where available
+
+#### 5. Integrated Carbon–NDVI Dataset
+
+The dashboard combines carbon predictions with available NDVI profiles while retaining all carbon prediction grids.
+
+#### 6. Spatial Carbon Map
+
+The dashboard provides an interactive spatial visualization of:
+
+* Total Carbon
+* Above-Ground Carbon
+* Below-Ground Carbon
+* CO₂ Equivalent
+* Predicted SOC
+* Predicted NPP
+
+---
+
+# 🖥️ Web Application Architecture
+
+```text
+GitHub Repository
+       │
+       ▼
+Streamlit Application
+       │
+       ├── app.py
+       ├── requirements.txt
+       │
+       ▼
+Carbon Prediction CSV
+       │
+       ▼
+NDVI CSV
+       │
+       ▼
+Interactive Dashboard
+       │
+       ▼
+Streamlit Community Cloud
+```
+
+### Technology Stack
+
+| Technology          | Purpose                                     |
+| ------------------- | ------------------------------------------- |
+| Python              | Data processing and application development |
+| Pandas              | Tabular data processing                     |
+| NumPy               | Numerical operations                        |
+| Shapely             | Spatial geometry processing                 |
+| PyDeck              | Interactive spatial visualization           |
+| Folium              | Web mapping support                         |
+| Streamlit           | Interactive dashboard                       |
+| QGIS                | GIS and spatial analysis                    |
+| Google Earth Engine | Remote sensing processing                   |
+| Scikit-learn        | Machine learning                            |
+| XGBoost             | Gradient boosting                           |
+| PostgreSQL/PostGIS  | Spatial database                            |
+| MongoDB Atlas       | Data storage                                |
+| Git/GitHub          | Version control and repository management   |
+
+---
+
+# 📂 Repository Structure
+
+```text
+District-Level-Carbon-Stock-Estimation/
+│
+├── README.md
+├── LICENSE
+│
+├── 01_Presentation/
+│
+├── 02_Report/
+│
+├── 03_Code/
+│
+├── 04_Data/
+│   ├── README.md
+│   ├── 04_Remote_Sensing_Inputs/
+│   └── 07_Processed_Grid_Dataset/
+│
+├── 05_Model_Results/
+│
+├── 06_Trained_Models/
+│
+└── 07_Website/
+    │
+    ├── Frontend/
+    │
+    └── Streamlit_App/
+        ├── app.py
+        └── requirements.txt
+```
+
+---
+
+# 📊 Final Carbon Prediction Dataset
+
+The dashboard uses:
+
+```text
+04_Data/
+└── 07_Processed_Grid_Dataset/
+    └── 04_Final_Output/
+        └── carbon_all_66790_final.csv
+```
+
+Important fields include:
+
+```text
+Grid_ID
+WKT
+Ag/NonAg_m
+agri_class
+DEM_mean
+Slope_mean
+sand_pct
+clay_pct
+bd_gcm3
+Predicted_SOC
+BGC_tC_ha
+Predicted_NPP
+AGC_tC_ha
+source
+Total_C_tC_ha
+Total_CO2e_tC_ha
+```
+
+---
+
+# 📈 Model Evaluation
+
+Model performance is evaluated using standard regression metrics including:
 
 | Metric | Description                  |
 | ------ | ---------------------------- |
@@ -218,109 +478,95 @@ The following metrics were used:
 | RMSE   | Root Mean Square Error       |
 | MAE    | Mean Absolute Error          |
 
-Detailed evaluation reports are available in:
+Detailed model evaluation files are available within the project code and model-results directories.
+
+---
+
+# 📦 Large Files
+
+Some spatial datasets, prediction outputs, archives and model files may exceed GitHub's standard file-size limits.
+
+Large datasets are therefore maintained externally where required.
+
+Download instructions are provided in:
 
 ```text
-03_Code/evaluation_report.txt
-03_Code/carbon_final_report.txt
+04_Data/README.md
+```
+
+Users should follow the download instructions before attempting to reproduce the complete workflow.
+
+---
+
+# ▶️ Running the Streamlit Dashboard Locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/HimanshuBhanja/District-Level-Carbon-Stock-Estimation.git
+```
+
+Navigate to the application:
+
+```bash
+cd District-Level-Carbon-Stock-Estimation/07_Website/Streamlit_App
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the application:
+
+```bash
+python -m streamlit run app.py
+```
+
+The application will normally be available at:
+
+```text
+http://localhost:8501
 ```
 
 ---
 
-## Repository Structure
+# ☁️ Deployment
+
+The Streamlit dashboard is deployed using **Streamlit Community Cloud**.
+
+### Live URL
+
+https://district-level-carbon-stock-estimation.streamlit.app/
+
+The application is connected to the project's GitHub repository and uses:
 
 ```text
-District-Level-Carbon-Stock-Estimation
-│
-├── README.md
-├── PROJECT_FLOW.md
-├── FOLDER_STRUCTURE.md
-│
-├── 01_Presentation/
-├── 02_Report/
-├── 03_Code/
-├── 04_Data/
-├── 05_Model_Results/
-├── 06_Trained_Models/
-└── 07_Website/
+Branch: main
+
+Application:
+07_Website/Streamlit_App/app.py
 ```
 
 ---
 
-## Large File Downloads
+# 🌍 Applications
 
-Certain raster datasets and trained machine learning models exceed GitHub's file size limitations.
+The developed framework can support:
 
-Download instructions are provided inside their respective folders.
-
-Examples:
-
-```text
-04_Data/03_LULC_Data/
-04_Data/04_Remote_Sensing_Inputs/
-06_Trained_Models/
-```
-
-Each folder contains download instructions and dataset descriptions.
+* Agricultural carbon monitoring
+* Carbon accounting
+* Climate mitigation planning
+* Soil carbon assessment
+* Spatial decision support
+* Sustainable agricultural management
+* Carbon stock visualization
+* Remote sensing-based environmental monitoring
 
 ---
 
-## Key Results
-
-| Metric                  | Value             |
-| ----------------------- | ----------------- |
-| Total Grid Cells        | 66,790            |
-| Agricultural Grid Cells | ~50,402           |
-| Estimated District Area | ~4,168 km²        |
-| Above-Ground Carbon     | ~1.66 Million tC  |
-| Below-Ground Carbon     | ~52.56 Million tC |
-| Total Carbon Stock      | ~54.23 Million tC |
-
----
-
-## Software and Technologies
-
-| Tool                | Purpose                        |
-| ------------------- | ------------------------------ |
-| Google Earth Engine | Remote Sensing Data Processing |
-| QGIS                | Spatial Analysis               |
-| Python              | Data Processing and Modeling   |
-| Scikit-Learn        | Random Forest Modeling         |
-| XGBoost             | Gradient Boosting Models       |
-| PostgreSQL/PostGIS  | Spatial Database               |
-| MongoDB Atlas       | Carbon Data Storage            |
-| Flask               | Backend API                    |
-| Leaflet.js          | Interactive Mapping            |
-| Render              | Cloud Deployment               |
-
----
-
-## Project Report
-
-The detailed technical report is available in:
-
-```text
-02_Report/Carbon_Stock_Report.docx
-```
-
----
-
-## How to Run
-
-1. Open `03_Code/carbon_stock_pipeline_FIXED.ipynb`.
-2. Ensure all required datasets are available in the corresponding data folders.
-3. Run notebook cells sequentially.
-4. Generated models will be saved in `06_Trained_Models/`.
-5. Visualizations will be saved in `05_Model_Results/`.
-6. Final predictions will be generated in:
-
-```text
-04_Data/07_Processed_Grid_Dataset/04_Final_Output/
-```
-
----
-
-## Author
+# 👨‍💻 Author
 
 **Himanshu Bhanja**
 
@@ -328,19 +574,40 @@ M.Sc. Agriculture Analytics
 
 Indian Institute of Remote Sensing (IIRS–ISRO)
 
-### Skills
+### Areas of Expertise
 
 * Remote Sensing
 * GIS and Spatial Analysis
+* Geospatial Data Science
 * Machine Learning
 * Python
+* Google Earth Engine
+* QGIS
 * PostgreSQL/PostGIS
-* Geospatial Data Science
+* Agricultural Analytics
 
 ---
 
-## Conclusion
+# 📄 Project Report
 
-This project demonstrates the integration of remote sensing, geospatial analytics, soil science, and machine learning to estimate district-level carbon stock using a scalable grid-based framework.
+The detailed technical report is available in:
 
-The developed workflow enables carbon monitoring at landscape scale and provides a foundation for climate mitigation planning, carbon accounting, and sustainable agricultural management.
+```text
+02_Report/
+```
+
+---
+
+# 📜 License
+
+This project is licensed under the MIT License. See `LICENSE` for details.
+
+---
+
+# 📌 Conclusion
+
+This project demonstrates an integrated geospatial machine learning framework for estimating agricultural carbon stock at district scale.
+
+By combining remote sensing, soil properties, productivity indicators, spatial modeling and machine learning, the workflow generates spatially explicit carbon estimates and presents them through an interactive web-based dashboard.
+
+The resulting **Carbon Stock Intelligence** platform provides a practical interface for exploring carbon stock, vegetation dynamics and spatial prediction outputs for Ludhiana District.
