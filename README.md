@@ -3,44 +3,6 @@
 ### Grid-Based Machine Learning Framework for Agricultural Landscapes in Ludhiana District, Punjab, India
 
 ---
-
-## 🚀 Live Dashboard
-
-### Carbon Stock Intelligence — Ludhiana
-
-**Live application:**
-https://district-level-carbon-stock-estimation.streamlit.app/
-
-The interactive Streamlit dashboard provides:
-
-* District-level carbon stock visualization
-* Above-ground carbon (AGC)
-* Below-ground carbon (BGC)
-* Total carbon stock
-* CO₂-equivalent estimates
-* Monthly NDVI temporal analysis
-* Grid-level carbon analysis
-* Grid-level NDVI profiles
-* Integrated Carbon–NDVI dataset
-* Interactive spatial carbon map
-* Carbon dataset statistics and coverage information
-
----
-
-## 📌 Project Highlights
-
-* ✔ District-wide agricultural carbon stock estimation
-* ✔ 250 m × 250 m spatial grid framework
-* ✔ Integration of remote sensing, soil and productivity datasets
-* ✔ Random Forest and XGBoost machine learning models
-* ✔ Above-ground and below-ground carbon estimation
-* ✔ Grid-level spatial prediction
-* ✔ Monthly NDVI analysis for June 2024–May 2025
-* ✔ Interactive Streamlit dashboard
-* ✔ GitHub-based project architecture
-* ✔ Publicly deployed web application
-
----
 > ## ⚠️ Project Status & Important Note
 >
 > This project was developed as part of the **Big Data Analytics** course during the **2nd semester of the M.Sc. Agriculture Analytics programme at the Indian Institute of Remote Sensing (IIRS), Dehradun**, under the guidance of **Dr. Kapil Oberoi Sir**.
@@ -99,6 +61,43 @@ The interactive Streamlit dashboard provides:
 >
 > **Therefore, this repository should be viewed as an academic prototype and an ongoing research workflow rather than a final authoritative carbon inventory for Ludhiana district.**
 >
+## 🚀 Live Dashboard
+
+### Carbon Stock Intelligence — Ludhiana
+
+**Live application:**
+https://district-level-carbon-stock-estimation.streamlit.app/
+
+The interactive Streamlit dashboard provides:
+
+* District-level carbon stock visualization
+* Above-ground carbon (AGC)
+* Below-ground carbon (BGC)
+* Total carbon stock
+* CO₂-equivalent estimates
+* Monthly NDVI temporal analysis
+* Grid-level carbon analysis
+* Grid-level NDVI profiles
+* Integrated Carbon–NDVI dataset
+* Interactive spatial carbon map
+* Carbon dataset statistics and coverage information
+
+---
+
+## 📌 Project Highlights
+
+* ✔ District-wide agricultural carbon stock estimation
+* ✔ 250 m × 250 m spatial grid framework
+* ✔ Integration of remote sensing, soil and productivity datasets
+* ✔ Random Forest and XGBoost machine learning models
+* ✔ Above-ground and below-ground carbon estimation
+* ✔ Grid-level spatial prediction
+* ✔ Monthly NDVI analysis for June 2024–May 2025
+* ✔ Interactive Streamlit dashboard
+* ✔ GitHub-based project architecture
+* ✔ Publicly deployed web application
+
+---
 ## 📖 Project Overview
 
 This project estimates carbon stock across agricultural landscapes of **Ludhiana District, Punjab, India**, using a grid-based geospatial framework and machine learning.
