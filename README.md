@@ -41,7 +41,64 @@ The interactive Streamlit dashboard provides:
 * ✔ Publicly deployed web application
 
 ---
-
+> ## ⚠️ Project Status & Important Note
+>
+> This project was developed as part of the **Big Data Analytics** course during the **2nd semester of the M.Sc. Agriculture Analytics programme at the Indian Institute of Remote Sensing (IIRS), Dehradun**, under the guidance of **Dr. Kapil Oberoi Sir**.
+>
+> The project demonstrates a complete geospatial and machine-learning workflow for **district-level carbon stock estimation**, integrating remote sensing, environmental variables, spatial grids, machine learning, GIS, database technologies, and web-based visualization.
+>
+> **Important:** This repository represents an **academic project and an ongoing research-learning workflow**. The current carbon-stock estimates should **not be interpreted as final or fully validated scientific estimates**.
+>
+> During post-project review and methodological evaluation, several issues and limitations were identified that require further investigation:
+>
+> ### 1. Precipitation Variable
+>
+> The NPP model assigns a relatively high feature importance to the **`Rabi_Preci`** variable. This raises an important methodological question regarding the exact definition, temporal aggregation, units, and spatial representation of the precipitation data used in the model.
+>
+> In particular, it is necessary to verify whether the variable represents **Rabi-season precipitation, annual precipitation, or another aggregation**, and whether the selected representation is consistent with the intended modelling methodology.
+>
+> ### 2. High Feature Importance of `Rabi_Preci`
+>
+> The Random Forest NPP model gives substantial importance to `Rabi_Preci`. While precipitation is an ecologically relevant driver of vegetation productivity, its disproportionately high importance requires additional investigation to determine whether it represents a genuine environmental relationship or is partly associated with data-processing, feature-construction, or spatial-data issues.
+>
+> Therefore, the feature-importance results are treated as an **indicator for further investigation rather than definitive evidence of causality**.
+>
+> ### 3. 250 m × 250 m Spatial Grid
+>
+> The analysis uses **250 m × 250 m grid cells**. The suitability of this spatial resolution needs to be evaluated carefully for each predictor variable, particularly climate variables such as precipitation.
+>
+> Predictor datasets must be spatially and temporally compatible with the grid-based modelling framework. Further validation of resampling, aggregation, spatial alignment, and spatial variability is required.
+>
+> ### 4. NPP Prediction Uncertainty
+>
+> The NPP model achieved moderate predictive performance. Therefore, the resulting above-ground carbon estimates contain considerable uncertainty and should not be considered definitive without additional validation and model improvement.
+>
+> ### 5. Carbon-Stock Scaling
+>
+> The conversion of grid-level carbon densities into district-level carbon stock requires careful validation of the study-area boundary, grid coverage, agricultural/non-agricultural masking, and area-scaling procedure.
+>
+> The current inventory contains **66,790 grid cells**, and the relationship between the grid-based area and the official district area requires further verification before the final district-scale carbon stock is treated as authoritative.
+>
+> ### 6. Ongoing Research
+>
+> These limitations are an important part of the project's learning process. The purpose of documenting them here is to maintain **scientific transparency and reproducibility** rather than present the current outputs as final results.
+>
+> I am continuing to work on the broader concepts of **carbon stock estimation, soil organic carbon, carbon sequestration, remote sensing, geospatial machine learning, and carbon MRV (Measurement, Reporting and Verification)**.
+>
+> Future work will focus on:
+>
+> - validating and reconstructing the precipitation variables;
+> - evaluating seasonal versus annual climate representations;
+> - investigating the high importance of `Rabi_Preci`;
+> - improving spatial and temporal consistency of predictor datasets;
+> - validating the 250 m grid-based modelling approach;
+> - improving NPP prediction performance;
+> - validating carbon-stock scaling against the actual study-area boundary;
+> - performing additional model validation and uncertainty analysis; and
+> - developing a more scientifically robust carbon-stock estimation framework.
+>
+> **Therefore, this repository should be viewed as an academic prototype and an ongoing research workflow rather than a final authoritative carbon inventory for Ludhiana district.**
+>
 ## 📖 Project Overview
 
 This project estimates carbon stock across agricultural landscapes of **Ludhiana District, Punjab, India**, using a grid-based geospatial framework and machine learning.
